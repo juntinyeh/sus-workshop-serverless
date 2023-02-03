@@ -12,7 +12,12 @@ public class Handler implements RequestHandler<Map<String,String>, String>{
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static int[] append2Array(int[] elements, int element)
     {
-        int[] newArray = Arrays.copyOf(elements, elements.length + 1);
+        //int[] newArray = Arrays.copyOf(elements, elements.length + 1);
+        int[] newArray = new int[elements.length + 1];
+        for(int i=0;i<=elements.length;i++)
+        {
+            newArray[i]=elements[i];
+        }
         newArray[elements.length] = element;
 
         return newArray;
